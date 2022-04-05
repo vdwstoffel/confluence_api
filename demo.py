@@ -13,4 +13,4 @@ version = confluence.get_page_version("Page Name") + 1
 confluence.create_atachment("filepath", 1)
 
 # Edit the page
-confluence.edit_page(1, "Page Name", version)
+confluence.edit_page(1, "Page Name", version, "template")

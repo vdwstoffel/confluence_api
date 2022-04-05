@@ -1,0 +1,4 @@
+<ac:structured-macro ac:name="toc" ac:schema-version="1" data-layout="default" ac:local-id="e56a1c08-6ed3-4f8d-aa98-cc6eecd07084" ac:macro-id="21c6f62338a4782ee3ce00b2e4b6ba30"><ac:parameter ac:name="minLevel">1</ac:parameter><ac:parameter ac:name="maxLevel">7</ac:parameter></ac:structured-macro>
+<h1>Stock</h1><h2>Current Stock</h2><ac:image ac:width="800"><ri:attachment ri:filename='daily_stock.png' /></ac:image>
+<h2>Weekly Comparison</h2><ac:image ac:width="800"><ri:attachment ri:filename='weekly_comparison.png'/></ac:image>
+<h2>Monthly Comparison</h2><ac:image ac:width="800"><ri:attachment ri:filename='monthly_comparison.png'/></ac:image>

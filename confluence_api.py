@@ -64,8 +64,11 @@ class ConfluenceApi:
         return data["results"][0]["version"]["number"]
 
 
-    def edit_page(self, id: int, page_name: str, version_number: int):
+    def edit_page(self, id: int, page_name: str, version_number: int, template_file):
         """Edit's a page on confluence. A counter needs to be kept of the version otherwise an error will be thrown. Should implement a try/except"""
+        with open(template_file) as f:
+            template = f.read()
+
         headers = {
             "Accept": "application/json",
             "Content-Type": "application/json",
@@ -80,8 +83,7 @@ class ConfluenceApi:
             "type": "page",
             "body": {
                 "storage": {
-                    "value": "<h1>Current Stock</h1><ac:image><ri:attachment ri:filename='img.png' /></ac:image>"
-                    "<h1>Weekly Comparison</h1><ac:image><ri:attachment ri:filename='second.png'/></ac:image>",
+                    "value": template,
                     "representation": "storage"
                     }
                 }
@@ -108,4 +110,4 @@ class ConfluenceApi:
         response = requests.put(self.base_url + f"/wiki/rest/api/content/{id}/child/attachment", headers=headers, files=files)
         response.raise_for_status()
         feedback = response.json()
-        print("Attached added to page")
+        print("File added to page")
